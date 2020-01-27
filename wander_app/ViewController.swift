@@ -8,9 +8,21 @@
 
 import UIKit
 import CoreLocation
+import CoreData
+
 class ViewController: UIViewController , CLLocationManagerDelegate  {
 
+    static var managedContext: NSManagedObjectContext!
     
+    lazy var persistentContainer: NSPersistentContainer = { let container = NSPersistentContainer(name: "DataModel")
+        container.loadPersistentStores(completionHandler: {
+        storeDescription, error in
+        if let error = error {
+          fatalError("Could load data store: \(error)")
+        }
+    })
+      return container
+    }()
     
     
     

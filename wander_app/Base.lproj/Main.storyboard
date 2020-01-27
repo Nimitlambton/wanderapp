@@ -133,6 +133,10 @@
                                 <rect key="frame" x="180" y="594" width="74" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save DATA"/>
+                                <connections>
+                                    <action selector="save:" destination="Ke0-RU-8n7" eventType="touchUpInside" id="e6s-Sh-AZH"/>
+                                    <segue destination="PLx-sj-mLV" kind="showDetail" id="G3j-Hg-ucE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -150,6 +154,39 @@
             </objects>
             <point key="canvasLocation" x="1821.7391304347827" y="137.94642857142856"/>
         </scene>
+        <!--Mapview-->
+        <scene sceneID="Iq2-k4-MXg">
+            <objects>
+                <viewController id="AZX-07-5SF" customClass="mapview" customModule="wander_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dD8-Sx-Chu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lem-cm-wAK">
+                                <rect key="frame" x="0.0" y="88" width="414" height="787"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="GBk-lJ-dIx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YBJ-MJ-CfN">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="zdb-aS-Clt">
+                            <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="zoominto:" destination="AZX-07-5SF" id="5HN-7Y-G5q"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="dup-ee-BvK"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="lem-cm-wAK" id="9eb-JQ-zDs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vsx-Ck-h8P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3668.115942028986" y="137.94642857142856"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="e3m-36-f1e">
             <objects>
@@ -166,7 +203,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCx-6N-DZZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+            <point key="canvasLocation" x="-264" y="138"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cNp-yn-hy7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PLx-sj-mLV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YnZ-Ys-BAI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AZX-07-5SF" kind="relationship" relationship="rootViewController" id="Ojo-QP-mCK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w1Z-z7-l0O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2757.971014492754" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>

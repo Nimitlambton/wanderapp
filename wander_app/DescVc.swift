@@ -8,9 +8,14 @@
 
 import UIKit
 import MapKit
+import CoreData
 class DescVc: UIViewController {
 
     
+    
+    var managedObjectContext: NSManagedObjectContext!
+ 
+    var mapdesc1 :Mapdesc?
     
     @IBOutlet weak var long: UILabel!
 
@@ -30,9 +35,34 @@ class DescVc: UIViewController {
 
         long.text = String(coordinate.longitude)
         lati.text = String(coordinate.latitude)
+    
     }
     
 
+    
+    
+    @IBAction func save(_ sender: Any) {
+    
+    
+        let title = locationTitle.text ?? ""
+        let subtitle = locationSubtitle.text ?? ""
+    
+        mapdesc1?.locationsubtitile = subtitle
+        mapdesc1?.locationtitle = title
+        mapdesc1?.lat = (43.7372371)
+        mapdesc1?.long = (-79.345544)
+        
+       try! ViewController.managedContext.save()
+        
+     print("saved")
+    
+    }
+    
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 
