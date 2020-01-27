@@ -17,9 +17,20 @@ public class Mapdesc: NSManagedObject,MKAnnotation{
         
             return CLLocationCoordinate2DMake(lat, long)
         
+
     }
     
+    public var title: String? {
+        if locationsubtitile!.isEmpty {
+        return "(No subtitile)"
+      } else {
+        return locationsubtitile
+      }
+    }
     
+    public var subtitle: String? {
+      return locationsubtitile
+    }
     
   
   

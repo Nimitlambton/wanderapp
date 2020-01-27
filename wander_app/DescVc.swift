@@ -17,9 +17,10 @@ class DescVc: UIViewController {
  
     var mapdesc1 :Mapdesc?
     
-    @IBOutlet weak var long: UILabel!
+    @IBOutlet weak var longi: UITextField!
+    @IBOutlet weak var lat: UITextField!
+    
 
-    @IBOutlet weak var lati: UILabel!
 
     @IBOutlet weak var locationTitle: UITextField!
     
@@ -33,8 +34,8 @@ class DescVc: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        long.text = String(coordinate.longitude)
-        lati.text = String(coordinate.latitude)
+        longi.text = String(coordinate.longitude)
+        lat.text = String(coordinate.latitude)
     
     }
     
@@ -44,13 +45,18 @@ class DescVc: UIViewController {
     @IBAction func save(_ sender: Any) {
     
     
+  
+        let cpp = Mapdesc(context: ViewController.managedContext)
+        
         let title = locationTitle.text ?? ""
         let subtitle = locationSubtitle.text ?? ""
+        let finalongitutde = Double(longi.text!)
+        let finallatitutde = Double(lat.text!)
     
-        mapdesc1?.locationsubtitile = subtitle
-        mapdesc1?.locationtitle = title
-        mapdesc1?.lat = (43.7372371)
-        mapdesc1?.long = (-79.345544)
+        cpp.locationsubtitile = subtitle
+        cpp.locationtitle = title
+        cpp.lat = finallatitutde!
+        cpp.long = finalongitutde!
         
        try! ViewController.managedContext.save()
         

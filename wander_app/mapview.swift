@@ -24,6 +24,10 @@ class mapview: UIViewController {
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        updateLocations()
+    }
+    
     func updateLocations() {
 
         mapView.removeAnnotations(locations)
