@@ -15,8 +15,8 @@ class mapview: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
-  var locations = [Mapdesc]()
-    
+    var locations = [Mapdesc]()
+    var buttontosend :Int?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,8 +39,7 @@ class mapview: UIViewController {
          fetchreq.entity = entity
         
         locations = try! ViewController.managedContext.fetch(fetchreq)
-       print("heloo:")
-          print(locations)
+          
         mapView.addAnnotations(locations)
    
     }
@@ -74,7 +73,24 @@ class mapview: UIViewController {
     
     }
     
+    
+    @objc func showLocationDetails(_ sender: UIButton) {
+        
+          let button = sender as UIButton
+           buttontosend = button.tag
+          performSegue(withIdentifier: "EditLocation", sender: sender)
 
+      
+      }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditLocation"{
+            
+            let controller = segue.destination as! DescVc
+            controller.indexEdit = buttontosend
+            
+        }
+    }
     
     
     
@@ -117,30 +133,26 @@ class mapview: UIViewController {
      }
     
     
-    @objc func showLocationDetails(_ sender: UIButton) {
-      
-        
-       // performSegue(withIdentifier: "EditLocation", sender: sender)
-    let button = sender as UIButton
-        print("btn number\(button.tag)")
-    
-    }
+  
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "Editlocation"
-        {
-           
-       
-            
-            
-            
-            
-        }
-    }
+    
+    
+  
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 extension mapview:MKMapViewDelegate{
@@ -148,25 +160,43 @@ extension mapview:MKMapViewDelegate{
     
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+       //1 to ignore other obj present
         guard annotation is Mapdesc else {
-          return nil
+           print("hey this is not pin")
+            return nil
         }
+        //2
+        
+        
         let identifier = "Location"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-        if annotationView == nil {
+        
+         if annotationView == nil {
           let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+         
+            //3
           pinView.isEnabled = true
           pinView.canShowCallout = true
-          pinView.animatesDrop = false
+          pinView.animatesDrop = true
           pinView.pinTintColor = UIColor(red:0.44, green:0.10, blue:0.71, alpha:1.0)
-          let rightButton = UIButton(type: .detailDisclosure)
-          rightButton.addTarget(self, action: #selector(showLocationDetails), for: .touchUpInside)
-          pinView.rightCalloutAccessoryView = rightButton
-          annotationView = pinView
+        
+            //4 button type detailDisclorse
+            let rightButton = UIButton(type: .contactAdd)
+          
+            //This method takes one parameter, sender, that refers to the control that sent the action message. In this case, the sender will be the i button. That’s why the type of the sender parameter is UIButton.
+          
+            
+            rightButton.addTarget(self, action: #selector(showLocationDetails), for: .touchUpInside)
+        
+            pinView.leftCalloutAccessoryView = rightButton
+            annotationView = pinView
         }
+        
         if let annotationView = annotationView {
           annotationView.annotation = annotation
-          let button = annotationView.rightCalloutAccessoryView as! UIButton
+        
+            //5
+            let button = annotationView.leftCalloutAccessoryView as! UIButton
             if let index = locations.firstIndex(of: annotation as! Mapdesc) {
             button.tag = index
           }

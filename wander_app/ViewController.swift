@@ -61,10 +61,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate  {
         mylocation.startUpdatingLocation()
     
         updatelabels()
-       
-    
-        
-        
+
         
     }
     
@@ -78,7 +75,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate  {
         
         let currentlocation = locations.last
         location = currentlocation
-        print(currentlocation)
+       // print(currentlocation)
         
     }
     

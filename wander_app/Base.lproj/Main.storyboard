@@ -134,7 +134,7 @@
                     <navigationItem key="navigationItem" id="nDu-yb-7pa">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="wLw-aD-fhC">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dQ5-7H-cyA">
-                                <rect key="frame" x="320" y="7" width="74" height="30"/>
+                                <rect key="frame" x="320" y="13" width="74" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save DATA"/>
                                 <connections>
@@ -189,7 +189,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="lem-cm-wAK" id="9eb-JQ-zDs"/>
-                        <segue destination="Ke0-RU-8n7" kind="show" identifier="EditLocation" id="zlW-1B-wfz"/>
+                        <segue destination="Ke0-RU-8n7" kind="show" identifier="EditLocation" id="JZB-rN-D1D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsx-Ck-h8P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -230,10 +230,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w1Z-z7-l0O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2757.971014492754" y="137.94642857142856"/>
+            <point key="canvasLocation" x="2677" y="567"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zlW-1B-wfz"/>
+        <segue reference="JZB-rN-D1D"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,10 +16,12 @@ class DescVc: UIViewController {
     var managedObjectContext: NSManagedObjectContext!
  
     var mapdesc1 :Mapdesc?
+    var p = [Mapdesc]()
     var locationToEdit: Mapdesc?
-  
+    var indexEdit :Int?
     var desc = ""
-    
+    var save = true
+    var maplist = [Mapdesc]()
     
     @IBOutlet weak var longi: UITextField!
     @IBOutlet weak var lat: UITextField!
@@ -37,20 +39,39 @@ class DescVc: UIViewController {
 
         longi.text = String(coordinate.longitude)
         lat.text = String(coordinate.latitude)
-    
-        if let location = locationToEdit {
-          title = "Edit Location"
+
+      p = fetchRecords()
+      
+        print(indexEdit)
+        if indexEdit != nil {
+        
+            print(p[indexEdit!])
         }
+      
         
     }
     
-
+    
+    func fetchRecords() -> [Mapdesc]{
+       //
+        let fetchRequest = NSFetchRequest<Mapdesc>(entityName: "Mapdesc")
+        
+        do{
+            maplist = try ViewController.managedContext.fetch(fetchRequest)
+        }catch{
+            print(error)
+        }
+        return maplist
+    }
+    
+    
+    
+    
     
     
     @IBAction func save(_ sender: Any) {
 
         let cpp = Mapdesc(context: ViewController.managedContext)
-        
         let title = locationTitle.text ?? ""
         let subtitle = locationSubtitle.text ?? ""
         let finalongitutde = Double(longi.text!)

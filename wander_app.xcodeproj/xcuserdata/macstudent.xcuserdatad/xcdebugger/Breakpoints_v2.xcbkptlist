@@ -14,8 +14,8 @@
             filePath = "wander_app/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -24,14 +24,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DB55378D-D76B-42EE-8356-241244F0585B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wander_app/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "locationManager(_:didFailWithError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,50 +46,50 @@
             filePath = "wander_app/DescVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "DescVc"
             landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "EC190F96-4F19-428A-BE93-2045624EBC5C - 5f0791901cd52f5f"
+                  uuid = "EC190F96-4F19-428A-BE93-2045624EBC5C - 389765f604360447"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "wander_app.DescVc.coordinate.getter : __C.CLLocationCoordinate2D"
                   moduleName = "wander_app"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macstudent/Desktop/wander_app/wander_app/DescVc.swift"
+                  urlString = "file:///Users/macstudent/Desktop/wanderapp/wander_app/DescVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
                   offsetFromSymbolStart = "129">
                </Location>
                <Location
-                  uuid = "EC190F96-4F19-428A-BE93-2045624EBC5C - f3669ea32b701f77"
+                  uuid = "EC190F96-4F19-428A-BE93-2045624EBC5C - 94f66ac53393346f"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "wander_app.DescVc.coordinate.setter : __C.CLLocationCoordinate2D"
                   moduleName = "wander_app"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macstudent/Desktop/wander_app/wander_app/DescVc.swift"
+                  urlString = "file:///Users/macstudent/Desktop/wanderapp/wander_app/DescVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
                   offsetFromSymbolStart = "146">
                </Location>
                <Location
-                  uuid = "EC190F96-4F19-428A-BE93-2045624EBC5C - 50edc90c16044351"
+                  uuid = "EC190F96-4F19-428A-BE93-2045624EBC5C - 377d3d6a0ee76849"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "wander_app.DescVc.coordinate.modify : __C.CLLocationCoordinate2D"
                   moduleName = "wander_app"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macstudent/Desktop/wander_app/wander_app/DescVc.swift"
+                  urlString = "file:///Users/macstudent/Desktop/wanderapp/wander_app/DescVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -97,49 +97,49 @@
                   offsetFromSymbolStart = "18">
                </Location>
                <Location
-                  uuid = "EC190F96-4F19-428A-BE93-2045624EBC5C - 1443133a1874b760"
+                  uuid = "EC190F96-4F19-428A-BE93-2045624EBC5C - 73d3e75c00979c78"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "wander_app.DescVc.coordinate.modify : __C.CLLocationCoordinate2D with unmangled suffix &quot;.resume.0&quot;"
                   moduleName = "wander_app"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macstudent/Desktop/wander_app/wander_app/DescVc.swift"
+                  urlString = "file:///Users/macstudent/Desktop/wanderapp/wander_app/DescVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
                   offsetFromSymbolStart = "4">
                </Location>
                <Location
-                  uuid = "EC190F96-4F19-428A-BE93-2045624EBC5C - 9e2f806d0262c2e6"
+                  uuid = "EC190F96-4F19-428A-BE93-2045624EBC5C - f9bf740b1a81e9fe"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "wander_app.DescVc.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; wander_app.DescVc"
                   moduleName = "wander_app"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macstudent/Desktop/wander_app/wander_app/DescVc.swift"
+                  urlString = "file:///Users/macstudent/Desktop/wanderapp/wander_app/DescVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "750">
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "1149">
                </Location>
                <Location
-                  uuid = "EC190F96-4F19-428A-BE93-2045624EBC5C - 1f2d46a80801158f"
+                  uuid = "EC190F96-4F19-428A-BE93-2045624EBC5C - 78bdb2ce10e23e97"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "wander_app.DescVc.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;wander_app.DescVc&gt;"
                   moduleName = "wander_app"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macstudent/Desktop/wander_app/wander_app/DescVc.swift"
+                  urlString = "file:///Users/macstudent/Desktop/wanderapp/wander_app/DescVc.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "681">
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "1080">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -154,8 +154,8 @@
             filePath = "wander_app/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -164,14 +164,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "AE725DCF-3D6E-40E9-9041-1DA1FF352BF1"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wander_app/DescVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "save(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -180,14 +180,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "EA3EE60D-D1FA-4AA1-BC17-F1A53EF7FEC7"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wander_app/DescVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "save(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,8 +202,8 @@
             filePath = "wander_app/DescVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "save(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -221,6 +221,22 @@
             startingLineNumber = "27"
             endingLineNumber = "27"
             landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D1C49E0-C790-4FE3-83EE-0AB58C9F0443"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wander_app/mapview.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "mapView(_:viewFor:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
