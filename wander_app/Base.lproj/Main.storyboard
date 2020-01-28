@@ -65,7 +65,7 @@
             <objects>
                 <viewController id="Ke0-RU-8n7" customClass="DescVc" customModule="wander_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ewa-hm-JcS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="save Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dB-fM-gg3">
@@ -115,15 +115,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQ5-7H-cyA">
-                                <rect key="frame" x="180" y="594" width="74" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save DATA"/>
-                                <connections>
-                                    <action selector="save:" destination="Ke0-RU-8n7" eventType="touchUpInside" id="e6s-Sh-AZH"/>
-                                    <segue destination="PLx-sj-mLV" kind="showDetail" id="G3j-Hg-ucE"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LeM-FM-Zrr">
                                 <rect key="frame" x="161" y="168" width="213" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -140,7 +131,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="BsU-Me-TwW"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nDu-yb-7pa"/>
+                    <navigationItem key="navigationItem" id="nDu-yb-7pa">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="wLw-aD-fhC">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dQ5-7H-cyA">
+                                <rect key="frame" x="320" y="7" width="74" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save DATA"/>
+                                <connections>
+                                    <action selector="save:" destination="Ke0-RU-8n7" eventType="touchUpInside" id="e6s-Sh-AZH"/>
+                                    <segue destination="PLx-sj-mLV" kind="showDetail" id="G3j-Hg-ucE"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="lat" destination="RD9-ZC-mVQ" id="BB2-85-mcy"/>
                         <outlet property="locationSubtitle" destination="a7n-CG-CLt" id="lTo-7f-e6O"/>
@@ -157,7 +160,7 @@
             <objects>
                 <viewController id="AZX-07-5SF" customClass="mapview" customModule="wander_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dD8-Sx-Chu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lem-cm-wAK">
@@ -186,6 +189,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="lem-cm-wAK" id="9eb-JQ-zDs"/>
+                        <segue destination="Ke0-RU-8n7" kind="show" identifier="EditLocation" id="zlW-1B-wfz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsx-Ck-h8P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -216,7 +220,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PLx-sj-mLV" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YnZ-Ys-BAI">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -229,4 +233,7 @@
             <point key="canvasLocation" x="2757.971014492754" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zlW-1B-wfz"/>
+    </inferredMetricsTieBreakers>
 </document>

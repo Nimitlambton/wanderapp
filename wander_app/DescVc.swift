@@ -16,12 +16,13 @@ class DescVc: UIViewController {
     var managedObjectContext: NSManagedObjectContext!
  
     var mapdesc1 :Mapdesc?
+    var locationToEdit: Mapdesc?
+  
+    var desc = ""
+    
     
     @IBOutlet weak var longi: UITextField!
     @IBOutlet weak var lat: UITextField!
-    
-
-
     @IBOutlet weak var locationTitle: UITextField!
     
     @IBOutlet weak var locationSubtitle: UITextField!
@@ -37,15 +38,17 @@ class DescVc: UIViewController {
         longi.text = String(coordinate.longitude)
         lat.text = String(coordinate.latitude)
     
+        if let location = locationToEdit {
+          title = "Edit Location"
+        }
+        
     }
     
 
     
     
     @IBAction func save(_ sender: Any) {
-    
-    
-  
+
         let cpp = Mapdesc(context: ViewController.managedContext)
         
         let title = locationTitle.text ?? ""

@@ -118,10 +118,26 @@ class mapview: UIViewController {
     
     
     @objc func showLocationDetails(_ sender: UIButton) {
-      // performSegue(withIdentifier: "EditLocation", sender: sender)
+      
+        
+       // performSegue(withIdentifier: "EditLocation", sender: sender)
+    let button = sender as UIButton
+        print("btn number\(button.tag)")
     
-        print("helloworld")
+    }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "Editlocation"
+        {
+           
+       
+            
+            
+            
+            
+        }
     }
     
 }
@@ -142,7 +158,7 @@ extension mapview:MKMapViewDelegate{
           pinView.isEnabled = true
           pinView.canShowCallout = true
           pinView.animatesDrop = false
-          pinView.pinTintColor = UIColor(red: 0.55, green: 0.2, blue: 0.4, alpha: 1)
+          pinView.pinTintColor = UIColor(red:0.44, green:0.10, blue:0.71, alpha:1.0)
           let rightButton = UIButton(type: .detailDisclosure)
           rightButton.addTarget(self, action: #selector(showLocationDetails), for: .touchUpInside)
           pinView.rightCalloutAccessoryView = rightButton
@@ -151,7 +167,7 @@ extension mapview:MKMapViewDelegate{
         if let annotationView = annotationView {
           annotationView.annotation = annotation
           let button = annotationView.rightCalloutAccessoryView as! UIButton
-          if let index = locations.index(of: annotation as! Mapdesc) {
+            if let index = locations.firstIndex(of: annotation as! Mapdesc) {
             button.tag = index
           }
         }
