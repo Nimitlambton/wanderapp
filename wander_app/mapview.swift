@@ -46,24 +46,6 @@ class mapview: UIViewController {
     }
 
     
-    
-    
-//          func fetchRecords() -> [Person]{
-//                //
-//                 let fetchRequest = NSFetchRequest<Person>(entityName: "Person")
-//
-//                 do{
-//                     personlist = try ViewController.managedContext.fetch(fetchRequest)
-//                 }catch{
-//                     print(error)
-//                 }
-//                 return personlist
-//             }
-    
-    
-    
-    
-    
     @IBAction func zoominto(_ sender: Any) {
    
         
@@ -86,4 +68,94 @@ class mapview: UIViewController {
     }
     */
 
+    @IBAction func show(_ sender: Any) {
+   let theRegion = region(for: locations)
+  mapView.setRegion(theRegion, animated: true)
+    
+    }
+    
+
+    
+    
+    
+    
+    
+    
+    
+    func region(for annotations: [MKAnnotation]) -> MKCoordinateRegion {
+         let region: MKCoordinateRegion
+         
+         switch annotations.count {
+         case 0:
+            region = MKCoordinateRegion(
+                center: mapView.userLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+           
+         case 1:
+           let annotation = annotations[annotations.count - 1]
+           region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+           
+         default:
+           var topLeft = CLLocationCoordinate2D(latitude: -90, longitude: 180)
+           var bottomRight = CLLocationCoordinate2D(latitude: 90, longitude: -180)
+           
+           for annotation in annotations {
+             topLeft.latitude = max(topLeft.latitude, annotation.coordinate.latitude)
+             topLeft.longitude = min(topLeft.longitude, annotation.coordinate.longitude)
+             bottomRight.latitude = min(bottomRight.latitude, annotation.coordinate.latitude)
+             bottomRight.longitude = max(bottomRight.longitude, annotation.coordinate.longitude)
+           }
+           
+           let center = CLLocationCoordinate2D(latitude: topLeft.latitude - (topLeft.latitude - bottomRight.latitude) / 2, longitude: topLeft.longitude - (topLeft.longitude - bottomRight.longitude) / 2)
+           
+           let extraSpace = 1.1
+           let span = MKCoordinateSpan(latitudeDelta: abs(topLeft.latitude - bottomRight.latitude) * extraSpace, longitudeDelta: abs(topLeft.longitude - bottomRight.longitude) * extraSpace)
+           
+           region = MKCoordinateRegion(center: center, span: span)
+         }
+         
+         return mapView.regionThatFits(region)
+     }
+    
+    
+    @objc func showLocationDetails(_ sender: UIButton) {
+      // performSegue(withIdentifier: "EditLocation", sender: sender)
+    
+        print("helloworld")
+    
+    }
+    
+}
+
+
+extension mapview:MKMapViewDelegate{
+    
+    
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is Mapdesc else {
+          return nil
+        }
+        let identifier = "Location"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        if annotationView == nil {
+          let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+          pinView.isEnabled = true
+          pinView.canShowCallout = true
+          pinView.animatesDrop = false
+          pinView.pinTintColor = UIColor(red: 0.55, green: 0.2, blue: 0.4, alpha: 1)
+          let rightButton = UIButton(type: .detailDisclosure)
+          rightButton.addTarget(self, action: #selector(showLocationDetails), for: .touchUpInside)
+          pinView.rightCalloutAccessoryView = rightButton
+          annotationView = pinView
+        }
+        if let annotationView = annotationView {
+          annotationView.annotation = annotation
+          let button = annotationView.rightCalloutAccessoryView as! UIButton
+          if let index = locations.index(of: annotation as! Mapdesc) {
+            button.tag = index
+          }
+        }
+        return annotationView
+    }
+    
 }

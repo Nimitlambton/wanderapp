@@ -163,6 +163,9 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lem-cm-wAK">
                                 <rect key="frame" x="0.0" y="88" width="414" height="787"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="AZX-07-5SF" id="BDZ-ud-LMG"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -175,7 +178,11 @@
                                 <action selector="zoominto:" destination="AZX-07-5SF" id="5HN-7Y-G5q"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="dup-ee-BvK"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="dup-ee-BvK">
+                            <connections>
+                                <action selector="show:" destination="AZX-07-5SF" id="xKb-Sg-hew"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="lem-cm-wAK" id="9eb-JQ-zDs"/>
