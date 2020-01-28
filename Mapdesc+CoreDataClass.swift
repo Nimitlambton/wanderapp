@@ -22,7 +22,8 @@ public class Mapdesc: NSManagedObject,MKAnnotation{
     
     public var title: String? {
         if locationsubtitile!.isEmpty {
-        return "(No subtitile)"
+    
+            return "(No subtitile)"
       } else {
         return locationsubtitile
       }

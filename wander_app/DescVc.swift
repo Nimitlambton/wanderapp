@@ -23,6 +23,8 @@ class DescVc: UIViewController {
     var save = true
     var maplist = [Mapdesc]()
     
+  //  var z = [Mapdesc?]()
+    
     @IBOutlet weak var longi: UITextField!
     @IBOutlet weak var lat: UITextField!
     @IBOutlet weak var locationTitle: UITextField!
@@ -39,15 +41,26 @@ class DescVc: UIViewController {
 
         longi.text = String(coordinate.longitude)
         lat.text = String(coordinate.latitude)
-
-      p = fetchRecords()
-      
-        print(indexEdit)
+        p = fetchRecords()
+      //  print(indexEdit)
+       
         if indexEdit != nil {
-        
+            
             print(p[indexEdit!])
+        
+            mapdesc1 = p[indexEdit!]
+            
+            longi.text = String( p[indexEdit!].long)
+            lat.text = String( p[indexEdit!].lat)
+            locationTitle.text = String(p[indexEdit!].locationtitle!)
+            locationSubtitle.text = String(p[indexEdit!].locationsubtitile!)
+            
+            
+            
+        
         }
       
+        
         
     }
     
@@ -72,21 +85,60 @@ class DescVc: UIViewController {
     @IBAction func save(_ sender: Any) {
 
         let cpp = Mapdesc(context: ViewController.managedContext)
-        let title = locationTitle.text ?? ""
-        let subtitle = locationSubtitle.text ?? ""
-        let finalongitutde = Double(longi.text!)
-        let finallatitutde = Double(lat.text!)
+              let titlee = locationTitle.text ?? ""
+              let subtitle = locationSubtitle.text ?? ""
+              let finalongitutde = Double(longi.text!)
+              let finallatitutde = Double(lat.text!)
+        
+        
+        if save {
+      
     
         cpp.locationsubtitile = subtitle
-        cpp.locationtitle = title
+        cpp.locationtitle = titlee
         cpp.lat = finallatitutde!
         cpp.long = finalongitutde!
         
        try! ViewController.managedContext.save()
         
-     print("saved")
+        print("saved")
     
-    }
+        }
+        
+        else {
+            
+          
+            if let mapde = mapdesc1{
+                
+                
+                mapde.lat = finallatitutde!
+                mapde.long = finalongitutde!
+                mapde.locationsubtitile = subtitle
+                mapde.locationtitle = titlee
+                
+                locationToEdit = mapde
+                
+            }
+            else {
+                
+                print("void")
+                
+            }
+                
+                
+            }
+            
+           
+            
+
+            }
+            
+            
+            
+            
+        }
+    
+    
     
     
     
@@ -103,4 +155,4 @@ class DescVc: UIViewController {
     }
     */
 
-}
+

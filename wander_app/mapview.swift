@@ -28,7 +28,7 @@ class mapview: UIViewController {
         updateLocations()
     }
     
-    func updateLocations() {
+     func updateLocations() {
 
         mapView.removeAnnotations(locations)
         
@@ -88,7 +88,7 @@ class mapview: UIViewController {
             
             let controller = segue.destination as! DescVc
             controller.indexEdit = buttontosend
-            
+            controller.save = false
         }
     }
     
