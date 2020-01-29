@@ -112,9 +112,10 @@ else {
        print("Deleted")
        }
         
-    
+
     }
 
+    
     @IBAction func save(_ sender: Any) {
 
         let cpp = Mapdesc(context: ViewController.managedContext)
@@ -139,13 +140,7 @@ else {
         }
         
         else {
-            
-            
-        
-            
-            
-            
-          
+
             if let mapde = mapdesc1{
                 
                 
@@ -166,14 +161,16 @@ else {
                 
             }
             
-           
-            
 
             }
             
-            
-            
-            
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+    }
+    
+    
         }
     
     
@@ -182,15 +179,5 @@ else {
     
     
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 

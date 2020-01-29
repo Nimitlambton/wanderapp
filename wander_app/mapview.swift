@@ -23,6 +23,9 @@ class mapview: UIViewController {
        updateLocations()
     }
     
+
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         updateLocations()
