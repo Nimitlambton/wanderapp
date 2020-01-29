@@ -35,6 +35,8 @@ class DescVc: UIViewController {
  
     
     
+    @IBOutlet weak var tra: UIBarButtonItem!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,15 +56,28 @@ class DescVc: UIViewController {
             lat.text = String( p[indexEdit!].lat)
             locationTitle.text = String(p[indexEdit!].locationtitle!)
             locationSubtitle.text = String(p[indexEdit!].locationsubtitile!)
+
+           
             
             
-            
-        
         }
-      
+
+        
+if save {
+          
+                    
+
+          
+                       
+    }
+        
         
         
     }
+    
+    
+    
+    
     
     
     func fetchRecords() -> [Mapdesc]{
@@ -80,6 +95,14 @@ class DescVc: UIViewController {
     
     
     
+    
+    @IBAction func del(_ sender: Any) {
+   
+    
+        
+    
+    
+    }
     
     
     @IBAction func save(_ sender: Any) {
@@ -106,6 +129,11 @@ class DescVc: UIViewController {
         }
         
         else {
+            
+            
+        
+            
+            
             
           
             if let mapde = mapdesc1{

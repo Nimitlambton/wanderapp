@@ -132,23 +132,31 @@
                         <viewLayoutGuide key="safeArea" id="BsU-Me-TwW"/>
                     </view>
                     <navigationItem key="navigationItem" id="nDu-yb-7pa">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="wLw-aD-fhC">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dQ5-7H-cyA">
-                                <rect key="frame" x="320" y="13" width="74" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save DATA"/>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="wLw-aD-fhC">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dQ5-7H-cyA">
+                                    <rect key="frame" x="320" y="13" width="74" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Save DATA"/>
+                                    <connections>
+                                        <action selector="save:" destination="Ke0-RU-8n7" eventType="touchUpInside" id="e6s-Sh-AZH"/>
+                                        <segue destination="PLx-sj-mLV" kind="showDetail" id="G3j-Hg-ucE"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem style="plain" systemItem="trash" id="ppq-Il-md2">
                                 <connections>
-                                    <action selector="save:" destination="Ke0-RU-8n7" eventType="touchUpInside" id="e6s-Sh-AZH"/>
-                                    <segue destination="PLx-sj-mLV" kind="showDetail" id="G3j-Hg-ucE"/>
+                                    <action selector="del:" destination="Ke0-RU-8n7" id="GPH-95-nF8"/>
                                 </connections>
-                            </button>
-                        </barButtonItem>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="lat" destination="RD9-ZC-mVQ" id="BB2-85-mcy"/>
                         <outlet property="locationSubtitle" destination="a7n-CG-CLt" id="lTo-7f-e6O"/>
                         <outlet property="locationTitle" destination="gr6-NL-drP" id="IVx-gh-UEt"/>
                         <outlet property="longi" destination="LeM-FM-Zrr" id="htw-lo-EDk"/>
+                        <outlet property="tra" destination="ppq-Il-md2" id="5Qh-ci-03X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26h-sj-3m2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -182,7 +190,7 @@
                                 <action selector="zoominto:" destination="AZX-07-5SF" id="5HN-7Y-G5q"/>
                             </connections>
                         </barButtonItem>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ITy-NO-GQh">
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ITy-NO-GQh">
                             <rect key="frame" x="143" y="13" width="128" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="add  more location"/>
@@ -240,6 +248,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="G3j-Hg-ucE"/>
         <segue reference="JZB-rN-D1D"/>
     </inferredMetricsTieBreakers>
 </document>

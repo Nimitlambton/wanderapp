@@ -23,8 +23,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate  {
     })
       return container
     }()
-    
-    
+
     
     let mylocation = CLLocationManager()
     
@@ -53,8 +52,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate  {
         if authStatus == .notDetermined { mylocation.requestWhenInUseAuthorization()
                     
                          return
-                    
-                     }
+     }
         
         mylocation.delegate = self
         mylocation.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
