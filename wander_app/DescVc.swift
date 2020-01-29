@@ -24,7 +24,9 @@ class DescVc: UIViewController {
     var maplist = [Mapdesc]()
     
 
+ 
     @IBOutlet weak var delete: UIButton!
+    
     
     
     @IBOutlet weak var longi: UITextField!
@@ -70,7 +72,7 @@ if save {
             
     delete.isHidden = true
     
-   // navigationItem.hidesBackButton = true
+
   
     
                        
@@ -84,11 +86,7 @@ else {
         
         
     }
-    
-    
-    
-    
-    
+
     
     func fetchRecords() -> [Mapdesc]{
        //
@@ -102,38 +100,21 @@ else {
         return maplist
     }
     
+
+    @IBAction func delrc(_ sender: Any) {
     
-    
-    
-    
-    @IBAction func dele(_ sender: Any) {
-    
-    
-    
-        
-        if indexEdit != nil{
-            
-            ViewController.managedContext.delete(p[indexEdit!])
-            
-               try! ViewController.managedContext.save()
-        }
+    if indexEdit != nil{
+           
+           ViewController.managedContext.delete(p[indexEdit!])
+           
+              try! ViewController.managedContext.save()
+       
+       print("Deleted")
+       }
         
     
     }
-    
-    
-    
-    
-    
-    @IBAction func del(_ sender: Any) {
-   
-    
-      
-    
-    
-    }
-    
-    
+
     @IBAction func save(_ sender: Any) {
 
         let cpp = Mapdesc(context: ViewController.managedContext)

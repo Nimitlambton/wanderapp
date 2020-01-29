@@ -57,6 +57,17 @@ class mapview: UIViewController {
     
     
     
+    @IBAction func addloc(_ sender: Any) {
+   
+    
+
+    
+    }
+    
+  
+    
+
+    
     /*
     // MARK: - Navigation
 
@@ -90,6 +101,13 @@ class mapview: UIViewController {
             controller.indexEdit = buttontosend
             controller.save = false
         }
+        
+        if segue.identifier == " add" {
+            
+            let cont =  segue.destination as! DescVc
+            
+        }
+        
     }
     
     

@@ -127,24 +127,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIc-e7-WP6">
+                                <rect key="frame" x="246" y="298" width="43" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="delete"/>
+                                <connections>
+                                    <action selector="delrc:" destination="Ke0-RU-8n7" eventType="touchUpInside" id="bAX-Rg-tCQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="BsU-Me-TwW"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="nDu-yb-7pa">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="fmN-9m-NfH">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B0o-yE-fYE">
-                                <rect key="frame" x="20" y="13" width="45" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Delete"/>
-                                <connections>
-                                    <action selector="dele:" destination="Ke0-RU-8n7" eventType="touchUpInside" id="ExT-6v-bUa"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="wLw-aD-fhC">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dQ5-7H-cyA">
-                                <rect key="frame" x="320" y="13" width="74" height="30"/>
+                                <rect key="frame" x="320" y="7" width="74" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save DATA"/>
                                 <connections>
@@ -154,8 +153,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="delete" destination="B0o-yE-fYE" id="SXs-Aw-o4F"/>
+                        <outlet property="delete" destination="rIc-e7-WP6" id="Z8W-5U-t5w"/>
                         <outlet property="lat" destination="RD9-ZC-mVQ" id="BB2-85-mcy"/>
                         <outlet property="locationSubtitle" destination="a7n-CG-CLt" id="lTo-7f-e6O"/>
                         <outlet property="locationTitle" destination="gr6-NL-drP" id="IVx-gh-UEt"/>
@@ -198,7 +198,8 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="add  more location"/>
                             <connections>
-                                <segue destination="Ke0-RU-8n7" kind="showDetail" id="WKD-zG-2CS"/>
+                                <action selector="addloc:" destination="AZX-07-5SF" eventType="touchUpInside" id="YuI-Cy-qIE"/>
+                                <segue destination="Ke0-RU-8n7" kind="showDetail" identifier="add" id="Na2-1R-tNf"/>
                             </connections>
                         </button>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="dup-ee-BvK">
@@ -214,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsx-Ck-h8P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3407" y="103"/>
+            <point key="canvasLocation" x="3405.7971014492755" y="102.45535714285714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e3m-36-f1e">
@@ -250,11 +251,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w1Z-z7-l0O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2629" y="164"/>
+            <point key="canvasLocation" x="2580" y="-410"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="G3j-Hg-ucE"/>
-        <segue reference="JZB-rN-D1D"/>
+        <segue reference="Na2-1R-tNf"/>
     </inferredMetricsTieBreakers>
 </document>
